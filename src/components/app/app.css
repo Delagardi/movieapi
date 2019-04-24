@@ -1,0 +1,13 @@
+body {
+  width: 1000px;
+  margin: 0 auto;
+}
+.header-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.copyright {
+  display: block;
+  text-align: center;
+}

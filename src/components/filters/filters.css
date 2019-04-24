@@ -1,0 +1,15 @@
+.filters-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.filters-header {
+  text-align: center;
+}
+
+.filters-item {
+  margin: 5px;
+  flex-grow: 1;
+  text-align: center;
+  max-width: 35%;
+}

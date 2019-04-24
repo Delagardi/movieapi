@@ -1,0 +1,24 @@
+.movie-list {
+  display: flex;
+  width: 880px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.movie-list-card {
+  margin: 10px;
+}
+
+.movie-list-card__link {
+  display: block;
+}
+
+.movie-list-card__img-wrapper {
+  min-height: 280px;
+}
+
+.movie-list-title {
+  display: block;
+  max-width: 185px;
+  word-wrap: break-word;
+}
