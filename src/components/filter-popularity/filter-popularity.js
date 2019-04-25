@@ -6,11 +6,7 @@ import { moviesLoadingAction } from '../../actions';
 import './filter-popularity.css';
 
 class FilterPopularity extends Component {
-  onFilterPopularityClick = (filterBy) => {
-    this.props.moviesLoading(filterBy);
-  }
-
-  onFilterTopRatedClick = (filterBy) => {
+  onFilterClick = (filterBy) => {
     this.props.moviesLoading(filterBy);
   }
 
@@ -19,15 +15,19 @@ class FilterPopularity extends Component {
       <div className="filter-popularity-list">
         <span 
           className="filter-popularity-item"
-          onClick={ () => this.onFilterPopularityClick('popular')}>
+          onClick={ () => this.onFilterClick('popular')}>
           Most popular today
         </span>
         <span 
           className="filter-popularity-item"
-          onClick={ () => this.onFilterTopRatedClick('top_rated')}>
+          onClick={ () => this.onFilterClick('top_rated')}>
           Top rated
         </span>
-        <span className="filter-popularity-item">Latest. Most newly created movie.</span>
+        <span 
+          className="filter-popularity-item"
+          onClick={ () => this.onFilterClick('upcoming')}>
+          Upcoming movies in theatres
+        </span>
       </div>
     );
   }
