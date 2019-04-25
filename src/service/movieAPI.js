@@ -56,6 +56,22 @@ export default class MovieServiceAPI {
     return response;
   }
 
+  getPopularMovies = async (filterBy) => {
+    console.log(filterBy);
+
+    const response = await axios
+      .get(`${this._apiBase}movie/${filterBy}${this.apiUrn}`)
+      .then( (res) => {
+        if (res.status !== 200) {
+          throw new Error(res.status);
+        }
+        return res.data.results;
+      })
+      .catch( (error) => console.log(`We couldn't FETCH url ${this._apiBase}movie/popular. We get error: ${error}`))
+    
+    return response;
+  }
+
   // TODO:
   // getMoviesByGenre = async (genreID) => {
   //    https://api.themoviedb.org/3/discover/movie?api_key=5874acfd11651a28c55771624f7021f4&language=en-US&include_adult=false&include_video=false&page=1&with_genres=28
