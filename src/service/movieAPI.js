@@ -5,20 +5,6 @@ export default class MovieServiceAPI {
   _apiKey = '5874acfd11651a28c55771624f7021f4';
   apiUrn = `?api_key=${this._apiKey}`;
 
-  // TODO: what for this shit here?
-  // getResource = async () => {
-  //   const urn = 'genre/movie/list';
-
-  //   const response = axios
-  //     .get(`${this._apiBase}${this.urn}${this.apiUrn}`)
-  //     .then( (response) => {
-  //       if (response.status !== 200) {
-  //         throw new Error(response.status);
-  //       }
-  //     })
-  //     .catch( (error) => console.log(`We couldn't FETCH url ${this._apiBase}${urn}. We get error: ${error}`) );
-  // }
-
   getGenres = async (url) => {
     // TODO: fix url variable AND fix url's
     url = 'genre/movie/list';
@@ -46,7 +32,7 @@ export default class MovieServiceAPI {
         if (res.status !== 200) {
           throw new Error(res.status);
         }
-        return res.data.results;
+        return res.data;
       })
       .catch( (error) => console.log(`We couldn't FETCH url ${this._apiBase}discover/movie. We get error: ${error}`) );
 
@@ -65,17 +51,14 @@ export default class MovieServiceAPI {
         if (res.status !== 200) {
           throw new Error(res.status);
         }
-        return res.data.results;
+        return res.data;
       })
       .catch( (error) => console.log(`We couldn't FETCH url ${this._apiBase}movie/popular. We get error: ${error}`))
     
     return response;
   }
 
-  // TODO:
-  // getMoviesByGenre = async (genreID) => {
-  //    https://api.themoviedb.org/3/discover/movie?api_key=5874acfd11651a28c55771624f7021f4&language=en-US&include_adult=false&include_video=false&page=1&with_genres=28
-  // }
+  // https://api.themoviedb.org/3/discover/movie?api_key=5874acfd11651a28c55771624f7021f4&page=1&primary_release_date.gte=1874-12-09&primary_release_date.lte=2019-04-24
 
 
 }

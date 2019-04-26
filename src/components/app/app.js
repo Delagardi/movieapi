@@ -4,9 +4,9 @@ import Main from '../main';
 // import Pagination from '../pagination';
 // import Footer from '../footer';
 import Filters from '../filters';
+import Pagintaion from '../pagination';
 
 import './app.css';
-
 
 class App extends Component {
   render() {
@@ -25,6 +25,7 @@ class App extends Component {
         </header>
         <main>
           <Main/>
+          <Pagintaion/>
         </main>
         <footer>
           <span className="copyright">&#169; Yuriy Shabanov 2019</span>
